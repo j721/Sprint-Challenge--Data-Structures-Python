@@ -16,7 +16,7 @@
 
 class RingBuffer:
     def __init__(self, capacity):
-        #need to initialize ring buffer. Set it None to be empty. 
+        #need to initialize ring buffer. Set it to None to be empty. 
         self.capacity = capacity
         self.storage = [None] *capacity
         #set current node/element value to 0
