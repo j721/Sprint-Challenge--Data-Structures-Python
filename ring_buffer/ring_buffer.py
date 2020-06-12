@@ -16,25 +16,23 @@
 
 class RingBuffer:
     def __init__(self, capacity):
+        #need to initialize ring buffer. Set it None to be empty. 
         self.capacity = capacity
         self.storage = [None] *capacity
+        #set current node/element value to 0
         self.current = 0
 
     def append(self, item):
+        #first item with index of 0 becomes the oldest node
+        #appends an element overwriting the oldest element by increments of +1
         self.storage[self.current] = item
         self.current +=1
+        #if current value of element reaches the limit/full capacity of ring buffer. Then set current to 0
         if self.current == self.capacity:
             self.current = 0
 
-        # if len(self.storage) < self.capacity:
-        #     self.storage.append(item)
-        # else:
-        #     self.storage[self.current] = item
-        #     if self.current < len(self.storage) -1:
-        #         self.current +=1
-        #     else:
-        #         self.oldest = 0
-
+      
     def get(self):
+        #loops through the self.storage in ring buffer to return new values
         return [val for val in self.storage if val is not None]
-        # return self.storage
+   
