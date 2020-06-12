@@ -37,6 +37,9 @@ class LinkedList:
             current = current.get_next()
 
         return False
+    
+    # def __str__(self):
+    #     return f"{self}"
 
 #Going to try Recursion
     def reverse_list(self, node, prev):
@@ -72,3 +75,11 @@ class LinkedList:
             self.reverse_list(node.get_next(), node)
              #have the previous node become the new next node in the list
             node.next_node = prev
+
+# list = LinkedList()
+# list.add_to_head(1)
+# list.add_to_head(2)
+# list.add_to_head(3)
+# list.add_to_head(4)
+# list.reverse_list(list.head, None)
+# print(list)
