@@ -107,7 +107,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-#create tree variable that will hold the BST class and have index start at 0 for names_1 . 
+#create tree variable that will hold the BSTNode class and have index start at 0 for names_1 . 
 # Since duplicates [] is a list that has an index when we have to loop through the name_2 file
 tree = BSTNode(names_1[0])
 
