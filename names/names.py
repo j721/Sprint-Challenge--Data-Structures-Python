@@ -107,6 +107,19 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:          #if these names are duplicates, then append that name to the duplicates list
 #             duplicates.append(name_1)
 
+
+#first method worked
+# name_dict = {}
+
+# for val in names_1:
+#     name_dict[val] = True
+
+# for val in names_2:
+#     if val in name_dict:
+#         duplicates.append(val)
+
+
+#2nd method
 #create tree variable that will hold the BSTNode class and have index start at 0 for names_1 . 
 # Since duplicates [] is a list that has an index when we have to loop through the name_2 file
 tree = BSTNode(names_1[0])
@@ -131,3 +144,5 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  There are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+#possibly did stretch with Binary Tree implementation? Run time improved with use of binary tree compared to dict
