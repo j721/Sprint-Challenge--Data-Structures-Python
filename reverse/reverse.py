@@ -40,18 +40,35 @@ class LinkedList:
 
 #Going to try Recursion
     def reverse_list(self, node, prev):
-        if not node:
-            return
-        elif node.next_node is not None:
-            self.reverse_list(node.next_node, node)
-        else:
-            self.head = node
-        node.set_next(prev)
 
-        # if node is not None:
-        #     if node.get_next() == None:
-        #         self.head = node
-        #         self.head.next_node = prev
-        #         return
-        #     self.reverse_list(node.get_next(), node)
-        #     node.next_node = prev
+        #solution 1. Has more if and else statements
+
+        #if the list is empty. No node present then return the list
+        # if not node:
+        #     return
+        # #if list contains more than 1 node
+        # #then call the recursion, and reverse through the first node and then the next node and so on
+        # elif node.next_node is not None:
+        #     self.reverse_list(node.next_node, node)
+        # #else if the list only has one node the set the node to head    
+        # else:
+        #     self.head = node
+        # #have the previous node become the new next node in the list
+        # node.set_next(prev)
+
+        #solution 2. Less if and else statements and more functions being called
+
+        #if list is not empty. 
+        if node is not None:
+            #If the list only has 1 node. And there is no next node in the list
+            #then set the node to head
+            #have the next node from the head point to it as previous
+            if node.get_next() == None:
+                self.head = node
+                self.head.next_node = prev
+                return
+            # #if list contains more than 1 node
+            #then call the recursion, and reverse through the first node and then the next node and so on    
+            self.reverse_list(node.get_next(), node)
+             #have the previous node become the new next node in the list
+            node.next_node = prev

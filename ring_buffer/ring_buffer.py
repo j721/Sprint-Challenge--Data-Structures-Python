@@ -35,4 +35,5 @@ class RingBuffer:
     def get(self):
         #loops through the self.storage in ring buffer to return new values
         return [val for val in self.storage if val is not None]
-   
+
+        #return self.storage    
