@@ -27,6 +27,7 @@ class RingBuffer:
         #appends an element overwriting the oldest element by increments of +1
         self.storage[self.current] = item
         self.current +=1
+        # Permanently change self's class from non-full to full
         #if current value of element reaches the limit/full capacity of ring buffer. Then set current to 0
         if self.current == self.capacity:
             self.current = 0
@@ -36,4 +37,6 @@ class RingBuffer:
         #loops through the self.storage in ring buffer to return new values
         return [val for val in self.storage if val is not None]
 
-        #return self.storage    
+        # return self.storage    
+    
+
