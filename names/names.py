@@ -1,6 +1,7 @@
 import time
 
-#going to try Binary Tree
+#need to implement a data structure to make search for names faster 
+#going to try Binary Search Tree 
 
 class BSTNode:
     def __init__(self, value):
@@ -18,6 +19,8 @@ class BSTNode:
             #how do we go left
             #we have to check if there is another node on the left side
             if self.left:
+                #then self.left is a Node
+                #moved the root from (self.left )and the .insert(value)- adds new value from the new root (self.left)
                 self.left.insert(value)
             else:
                 #then we can park the value here
@@ -104,9 +107,18 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+#create tree variable that will hold the BST class and have index start at 0 for names_1 . 
+# Since duplicates [] is a list that has an index when we have to loop through the name_2 file
 tree = BSTNode(names_1[0])
+
+#name and name2 are banana words
+#but the names_1 and names_2 are the names of actual files
+
+#create a loop where we will add a name into names_1
 for name in names_1:
     tree.insert(name)
+#create a loop for if tree contains a duplicate name
+#then we will add that duplicate name into the duplicates array
 for name2 in names_2:
     if tree.contains(name2):
         duplicates.append(name2)
